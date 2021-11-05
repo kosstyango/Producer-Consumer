@@ -4,6 +4,7 @@
 //Перебрать и распечатать значения продуктов - values().
 
 import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
         List<Product> productList = new ArrayList<>(); // создаём список игрушек
@@ -30,10 +31,23 @@ public class Main {
         productMap.put("Ugears", productList.get(8)); //даём название девятой игрушке
         productMap.put("Сабля", productList.get(9)); //даём название десятой игрушке
 
-        System.out.println(productMap.entrySet()); //вызываем метод распечатки Map
-        System.out.println(); // пустая строка        
-        System.out.println(productMap.keySet()); //вызываем метод распечатки Keys
-        System.out.println(); // пустая строка        
-        System.out.println(productMap.values()); //вызываем метод распечатки Values
+
+        printCollection1((HashMap) productMap); //вызываем метод распечатки Map
+        System.out.println(); // пустая строка
+
+        printCollection2((HashMap) productMap);//вызываем метод распечатки Keys
+        System.out.println(); // пустая строка
+
+        printCollection3((HashMap) productMap); //вызываем метод распечатки Values
+    }
+
+    private static void printCollection1(HashMap productMap) {//метод распечатки Map
+        System.out.println(productMap.entrySet());
+    }
+    private static void printCollection2(HashMap productMap) {//метод распечатки Keys
+        System.out.println(productMap.keySet());
+    }
+    private static void printCollection3(HashMap productMap) { //метод распечатки Values
+        System.out.println(productMap.values());
     }
 }
